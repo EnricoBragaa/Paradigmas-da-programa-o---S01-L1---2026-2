@@ -1,0 +1,23 @@
+dim segundos as double
+dim minutos as double
+dim horas as double
+
+dim entradaEmHoras as double
+
+print "Entre com o valor em horas: "
+input entradaEmHoras
+
+horas = entradaEmHoras
+
+minutos = horas*60
+
+segundos = minutos*60
+
+print "Valor em horas: "
+print horas
+
+print "Valor em minutos: "
+print minutos
+
+print "Valor em segundos: "
+print segundos
