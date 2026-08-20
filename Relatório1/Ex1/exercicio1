@@ -1,1 +1,22 @@
+dim peso as double
+dim agua as double
+dim meta as double
 
+print "Peso da pessoa (kg): "
+peso = 60
+print peso
+
+print "Qtd de agua ingerida (ml): "
+agua = 2000
+print agua
+
+meta = peso * 35
+
+print "Meta = "
+print meta
+
+if agua >= meta then    
+    print "Meta atingida"
+else
+    print "Meta nao atingida"
+end if
