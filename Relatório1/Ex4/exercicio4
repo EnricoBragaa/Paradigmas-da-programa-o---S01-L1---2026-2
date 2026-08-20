@@ -1,0 +1,16 @@
+dim distancia as double 
+dim tempo as double
+
+dim pace as double
+
+print "Distancia percorrida (em Km): "
+input distancia
+
+print "Tempo gasto (em minutos): "
+input tempo
+
+pace = tempo/distancia
+
+print "pace medio = " 
+print pace 
+print "min/Km"
