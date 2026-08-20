@@ -1,0 +1,56 @@
+Pedi ajuda à IA da propria plataforma para me ajudar a identificar o erro do meu código.
+
+Vi que estava fazendo a conta de divisão ao invés de multiplicação, além de entender que em basic o tipo float não é reconhecido, sendo assim troquei ele para o tipo double.
+
+Prompt:
+      Me ajude a identificar o erro desse código
+      
+      dim segundos as float
+      dim minutos as float 
+      dim horas as float
+      
+      dim entradaEmHoras as float
+      
+      print "Entre com o valor em horas: "
+      input entradaEmHoras
+      
+      horas = entradaEmHoras
+      
+      minutos = horas/60
+      
+      segundos = minutos/60
+      
+      print "Valor em horas: "
+      print horas
+      
+      print "Valor em minutos: "
+      print minutos
+      
+      print "Valor em segundos: "
+      print segundos
+
+Resposta: 
+      O erro acontece porque o tipo float não é reconhecido por esse dialeto BASIC. Use double no lugar de float.
+      
+      Também corrigi a conversão de horas para segundos: uma hora equivale a 3600 segundos.
+      
+      +dim segundos as double
+      +dim minutos as double
+      +dim horas as double
+      +dim entradaEmHoras as double
+      +
+      +print "Entre com o valor em horas: "
+      +input entradaEmHoras
+      +
+      +horas = entradaEmHoras
+      +minutos = horas * 60
+      +segundos = horas * 3600
+      +
+      +print "Valor em horas: "
+      +print horas
+      +
+      +print "Valor em minutos: "
+      +print minutos
+      +
+      +print "Valor em segundos: "
+       print segundos
