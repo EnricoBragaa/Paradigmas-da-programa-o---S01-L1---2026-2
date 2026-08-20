@@ -1,0 +1,35 @@
+Utilizei a ia para ver como fazia a comparação "!=" em basic.
+
+O resultado foi satisfatório, ja que entendi perfeitamente como usar a comparação.
+
+Meu prompt:
+      como faço a comparação "!=" dentro de um while na linguagem basic?
+
+Resposta retornada pelo chat gpt:
+      Na linguagem BASIC, o operador de diferença/“não igual” é:
+      
+      <>
+      
+      Então, dentro de um WHILE, você faria:
+      
+      WHILE x <> 10
+          ' comandos
+      WEND
+      
+      Isso significa: “enquanto x for diferente de 10”.
+      
+      Exemplos
+      WHILE senha <> 1234
+          INPUT "Digite a senha: ", senha
+      WEND
+      
+      Ou:
+      
+      WHILE opcao <> 0
+          PRINT "Digite 0 para sair"
+          INPUT opcao
+      WEND
+      
+      ⚠️ Diferentemente de C/C++/Java, em BASIC não use !=. O correto é <>.
+      
+      Se você estiver usando o BASIC do Falcon/Arduino que você estava utilizando antes, posso te mostrar a sintaxe específica dele também.
