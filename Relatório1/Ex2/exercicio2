@@ -1,0 +1,16 @@
+dim codigo as integer
+dim pin as integer 
+
+codigo = 4324
+
+print "Entre com um pin de 4 digitos: "
+input pin
+
+while codigo <> pin
+    print "Pin digitado incorreto, tente novamente: "
+    input pin
+wend
+
+print "Pin correto! Seja bem vindo"
+
+
