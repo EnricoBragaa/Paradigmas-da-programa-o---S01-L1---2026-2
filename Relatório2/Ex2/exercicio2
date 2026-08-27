@@ -1,1 +1,31 @@
+function contarOcorrencias(tabela, alvo)
+    local qtd=0
+    for i=0, #tabela do
+        if tabela[i]==alvo then 
+            qtd = qtd +1
+        end
+    end
+    return qtd
+end
+
+print("Quantidade de elementos disponiveis na tabela: ")
+local N = tonumber(io.read())
+local tabela = {}
+
+for i=1, N do
+    print("Entre com o valor da posicao "..i.." na tabela:") 
+    table.insert(tabela, tonumber(io.read()))
+    i = i +1
+end
+
+print("Escreva o numero alvo: ")
+local x = tonumber(io.read())
+
+local resultado = contarOcorrencias(tabela, x)
+
+if resultado ==1 then
+    print("O numero "..x.." " .. "aparece "..resultado.. " vez")
+else
+    print("O numero "..x.." " .. "aparece "..resultado.. " vezes")
+end
 
