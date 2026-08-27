@@ -1,1 +1,16 @@
+function gerarTabelaPotencias(inicio, fim, base)
+for i = inicio, fim do
+    print(base.. " ^ " ..i.. " = ".. (base^i))
+end
+end
 
+print ("Valor da base: ")
+local base = tonumber(io.read())
+
+print ("Valor do expoente inicial: ")
+local M = tonumber(io.read())
+
+print ("Valor do expoente final: ")
+local N = tonumber(io.read())
+
+local operacao = gerarTabelaPotencias(M,N,base)
