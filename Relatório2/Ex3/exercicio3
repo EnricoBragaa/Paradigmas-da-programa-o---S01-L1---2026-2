@@ -1,1 +1,41 @@
+function filtrarMaiores(tabela, limite)
+    local tabela2={}
+
+    for i=1, #tabela do
+        if tabela[i]>limite then 
+            table.insert(tabela2, tabela[i])
+        end
+    end
+    return tabela2
+end
+
+print("Quantidade de elementos disponiveis na tabela: ")
+local N = tonumber(io.read())
+local tabela = {}
+
+for i=1, N do
+    print("Entre com o valor da posicao "..i.." na tabela:") 
+    table.insert(tabela, tonumber(io.read()))
+    i = i +1
+end
+
+print("Escreva o numero limite: ")
+local k = tonumber(io.read())
+
+local resultado = filtrarMaiores(tabela, k)
+
+if #resultado ~=0 then
+    print("Numeros maiores que "..k.. ": ")
+
+    for i=1, #resultado do
+    print(resultado[i])
+    
+    end
+else
+    print("A lista não possui nenhum valor maior que "..k)
+end
+
+
+
+
 
