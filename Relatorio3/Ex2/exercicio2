@@ -1,0 +1,24 @@
+use std::io;
+
+fn acertou(p: i32, sec: i32) -> bool {
+    (p - sec).abs() <= 5
+}
+
+fn main() {
+    let sec = 13;
+    loop {
+        let mut s = String::new();
+        println!("Palpite: ");
+        io::stdin().read_line(&mut s).unwrap();
+        let p: i32 = s.trim().parse().unwrap_or(0);
+        
+        if acertou(p, sec) {
+            println!("Voce acertou! Ficou a apenas {} unidades do numero secreto!", (p - sec).abs());
+            break;
+        }
+        println!("Tente novamente.");
+    }
+
+
+    
+}
