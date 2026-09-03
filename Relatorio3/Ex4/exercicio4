@@ -1,0 +1,36 @@
+use std::io;
+
+fn nota(p1: f64, p2: f64, red: f64) -> f64 {
+    let npt = (p1 + p2) / 2.0;
+    let final_ = (npt * 0.6) + (red * 0.4);
+    
+    if final_ >= 60.0 {
+        println!("Parabens! Candidato aprovado!");
+    } else {
+        println!("Candidato reprovado (não atingiu a pontuação necessária).");
+    }
+    final_
+}
+
+fn main() {
+    let mut s1 = String::new();
+    println!("P1:");
+    io::stdin().read_line(&mut s1).unwrap();
+    let p1: f64 = s1.trim().parse().unwrap_or(0.0);
+
+    let mut s2 = String::new();
+    println!("P2:");
+    io::stdin().read_line(&mut s2).unwrap();
+    let p2: f64 = s2.trim().parse().unwrap_or(0.0);
+
+    let mut s3 = String::new();
+    println!("Redacao:");
+    io::stdin().read_line(&mut s3).unwrap();
+    let red: f64 = s3.trim().parse().unwrap_or(0.0);
+
+    let final_ = nota(p1, p2, red);
+    println!("Final: {}", final_);
+
+
+    
+}
