@@ -1,0 +1,35 @@
+use std::io;
+
+fn imprime(d: i32, inf: i32, sup: i32) {
+    for i in inf..=sup {
+        if i % 10 == d {
+            println!("{}", i);
+        }
+    }
+}
+
+fn main() {
+    let mut s1 = String::new();
+    println!("Digito:");
+    
+    io::stdin().read_line(&mut s1).unwrap();
+    
+    let d: i32 = s1.trim().parse().unwrap_or(0);
+
+    let mut s2 = String::new();
+    println!("Inferior:");
+    
+    io::stdin().read_line(&mut s2).unwrap();
+    
+    let inf: i32 = s2.trim().parse().unwrap_or(0);
+
+    let mut s3 = String::new();
+    println!("Superior:");
+    
+    io::stdin().read_line(&mut s3).unwrap();
+    let sup: i32 = s3.trim().parse().unwrap_or(0);
+
+    imprime(d, inf, sup);
+
+    
+}
