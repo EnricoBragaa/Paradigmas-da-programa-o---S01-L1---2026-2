@@ -1,1 +1,32 @@
+use std::io;
 
+fn valida(p: &str) -> bool {
+    if p.len() < 7 { 
+        return false; 
+    }
+    let mut mai = 0;
+
+    let mut num = 0;
+    for c in p.chars() {
+        if c.is_ascii_uppercase() { mai += 1; }
+        if c.is_numeric() { num += 1; }
+    }
+    mai >= 4 && num >= 2
+}
+
+fn main() {
+    loop {
+        let mut s = String::new();
+        println!("Placa:");
+        io::stdin().read_line(&mut s).unwrap();
+        
+        if valida(s.trim()) {
+            println!("Placa cadastrada no sistema!");
+            break;
+        }
+        println!("Invalida.");
+    }
+
+
+
+}
