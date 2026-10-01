@@ -1,0 +1,40 @@
+#include <iostream>
+
+using namespace std;
+
+class Banda {
+public:
+    string nome;
+    int integrantes;
+    float potencia;
+    int energia;
+
+    void duelar(Banda &rival) {
+        cout << "A banda " << nome << " esta fazendo seu show!" << endl;
+        rival.energia = rival.energia - potencia;
+    }
+};
+
+int main() {
+    Banda b1;
+    Banda b2;
+
+    b1.nome = "Inarock";
+    b1.integrantes = 4;
+    b1.potencia = 30;
+    b1.energia = 100;
+
+    b2.nome = "Metaltel";
+    b2.integrantes = 3;
+    b2.potencia = 20;
+    b2.energia = 100;
+
+    b1.duelar(b2);
+
+    cout << endl;
+    cout << "Status final:" << endl;
+    cout << b1.nome << " - energia: " << b1.energia << endl;
+    cout << b2.nome << " - energia: " << b2.energia << endl;
+
+    return 0;
+}
