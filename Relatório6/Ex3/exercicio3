@@ -1,0 +1,42 @@
+#include <iostream>
+using namespace std;
+
+class MembroInatel {
+public:
+    string nome;
+    void seApresentar() {
+        cout << "Sou um membro da comunidade Inatel: " << nome << "." << endl;
+    }
+};
+
+class Aluno : public MembroInatel {
+public:
+    string curso;
+    void seApresentar() {
+        cout << "Meu nome e " << nome << " e estudo no curso de " << curso << "." << endl;
+    }
+};
+
+class Professor : public MembroInatel {
+public:
+    string disciplina;
+    void seApresentar() {
+        cout << "Meu nome e " << nome << " e leciono a disciplina de " << disciplina << "." << endl;
+    }
+};
+
+int main() {
+    Aluno a;
+    Professor p;
+
+    a.nome = "Enrico";
+    a.curso = "Engenharia de software";
+
+    p.nome = "Mosca";
+    p.disciplina = "Algoritmos 1";
+
+    a.seApresentar();
+    p.seApresentar();
+
+    return 0;
+}
