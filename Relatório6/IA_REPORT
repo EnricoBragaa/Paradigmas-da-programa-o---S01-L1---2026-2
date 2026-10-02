@@ -1,0 +1,87 @@
+Utilizei o ClaudeCode para me ajudar a criar as classes no c++ pois não lembrava como fazia.
+
+Boa noite, claude. como faço para criar classes no c++
+
+Boa noite! Em C++, uma classe é declarada com a palavra-chave class, agrupando atributos (dados) e métodos (funções). Veja um exemplo completo:
+
+cpp
+#include <iostream>
+#include <string>
+using namespace std;
+
+class Aluno {
+private:
+    string nome;
+    int matricula;
+
+public:
+    // Construtor
+    Aluno(string n, int m) {
+        nome = n;
+        matricula = m;
+    }
+
+    // Métodos
+    void apresentar() {
+        cout << "Nome: " << nome << ", Matrícula: " << matricula << endl;
+    }
+
+    string getNome() {
+        return nome;
+    }
+
+    void setNome(string n) {
+        nome = n;
+    }
+};
+
+int main() {
+    Aluno a("Enrico", 12345);
+    a.apresentar();
+    a.setNome("Outro Nome");
+    cout << a.getNome() << endl;
+    return 0;
+}
+Pontos principais:
+
+private: só a própria classe acessa. É o padrão em class e serve para encapsular os dados.
+public: acessível de fora, normalmente usado para os métodos.
+Construtor: tem o mesmo nome da classe, sem tipo de retorno, e é chamado automaticamente ao criar o objeto.
+Getters e setters: métodos para ler e alterar atributos privados de forma controlada.
+Versão com lista de inicialização (mais idiomática):
+
+cpp
+Aluno(string n, int m) : nome(n), matricula(m) {}
+Separando em arquivos (prática comum em projetos maiores):
+
+Aluno.h
+
+cpp
+#ifndef ALUNO_H
+#define ALUNO_H
+#include <string>
+
+class Aluno {
+private:
+    std::string nome;
+    int matricula;
+public:
+    Aluno(std::string n, int m);
+    void apresentar() const;
+};
+
+#endif
+Aluno.cpp
+
+cpp
+#include "Aluno.h"
+#include <iostream>
+
+Aluno::Aluno(std::string n, int m) : nome(n), matricula(m) {}
+
+void Aluno::apresentar() const {
+    std::cout << nome << " - " << matricula << std::endl;
+}
+O :: (operador de escopo) indica que a função pertence à classe Aluno, e o const ao final garante que o método não modifica o objeto.
+
+Se quiser, posso mostrar também herança, destrutores ou sobrecarga de operadores. Tem algum caso específico que você está implementando?
