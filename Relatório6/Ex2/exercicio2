@@ -1,0 +1,52 @@
+#include <iostream>
+
+using namespace std;
+
+class LinkSocial {
+private:
+    string nome;
+    string arcana;
+    int rank;
+
+public:
+    void setNome(string n) {
+        nome = n;
+    }
+    string getNome() {
+        return nome;
+    }
+
+    void setArcana(string a) {
+        arcana = a;
+    }
+    string getArcana() {
+        return arcana;
+    }
+
+    void setRank(int r) {
+        rank = r;
+    }
+    int getRank() {
+        return rank;
+    }
+
+    void subirRank() {
+        rank++;
+    }
+};
+
+int main() {
+    LinkSocial l;
+
+    l.setNome("AAAINATEL");
+    l.setArcana("BBBINATEL");
+    l.setRank(1);
+
+    l.subirRank();
+
+    cout << "Nome: " << l.getNome() << endl;
+    cout << "Arcana: " << l.getArcana() << endl;
+    cout << "Rank: " << l.getRank() << endl;
+
+    return 0;
+}
