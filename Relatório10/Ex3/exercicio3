@@ -1,0 +1,47 @@
+class PhoneWave
+  def enviar_dmail(mensagem)
+    puts "Mensagem: #{mensagem}"
+    puts "Mensagem enviada para o passado!"
+  end
+end
+
+class MembroDoLab
+  attr_reader :numero, :nome
+
+  def initialize(numero, nome)
+    @numero = numero
+    @nome = nome
+  end
+end
+
+class LaboratorioDeGadgets
+  def initialize
+    @phonewave = PhoneWave.new
+    @membros = []
+  end
+
+  def admitir(membro)
+    @membros << membro
+    puts "Membro #{membro.nome} admitido! Número: #{membro.numero}"
+  end
+
+  def experimento(mensagem)
+    puts "\nMembros presentes:"
+
+    @membros.each do |membro|
+      puts "#{membro.numero} - #{membro.nome}"
+    end
+
+    @phonewave.enviar_dmail(mensagem)
+  end
+end
+
+membro1 = MembroDoLab.new(1, "Okabe")
+membro2 = MembroDoLab.new(2, "Mayuri")
+
+laboratorio = LaboratorioDeGadgets.new
+
+laboratorio.admitir(membro1)
+laboratorio.admitir(membro2)
+
+laboratorio.experimento("O experimento foi um sucesso!")
