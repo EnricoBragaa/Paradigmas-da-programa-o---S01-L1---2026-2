@@ -1,0 +1,52 @@
+class CoquetelAfterlife
+  attr_reader :nome
+
+  def initialize(nome, preco)
+    @nome = nome
+    @_preco = preco
+  end
+
+  def preco
+    @_preco
+  end
+
+  def preco=(valor)
+    if valor >= 5 && valor <= 200
+      @_preco = valor
+    else
+      puts "Preço inválido!"
+    end
+  end
+
+  def ficha
+    "Drink: #{@nome} - Preço: R$ #{preco}"
+  end
+end
+
+class DrinkDeLenda < CoquetelAfterlife
+  attr_reader :lenda
+
+  def initialize(nome, preco, lenda)
+    super(nome, preco)
+    @lenda = lenda
+  end
+
+  def ficha
+    "#{super} - Lenda: #{@lenda}"
+  end
+end
+
+drink1 = CoquetelAfterlife.new("Cerveja", 15)
+drink2 = DrinkDeLenda.new("Johnny Silverhand", 80, "Johnny Silverhand")
+drink3 = DrinkDeLenda.new("Jackie Welles", 60, "Jackie Welles")
+
+drinks = [drink1, drink2, drink3]
+
+drinks.each do |drink|
+  puts drink.ficha
+end
+
+drink2.preco = 500
+drink2.preco = 80
+
+puts drink2.ficha
