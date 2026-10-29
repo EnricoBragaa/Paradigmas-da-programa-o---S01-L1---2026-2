@@ -11,4 +11,3 @@ squirtle.atacar(bulbasaur);
 console.log(`Vida do ${squirtle.apelido}: ${squirtle.vida}`);
 console.log(`Vida do ${bulbasaur.apelido}: ${bulbasaur.vida}`);
 
-// console.log(squirtle._vida);
