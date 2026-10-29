@@ -1,0 +1,9 @@
+const AgenteProtocolo = require('./AgenteProtocolo');
+
+class Iniciador extends AgenteProtocolo {
+    usarHabilidade() {
+        return 'lança um drone para revelar os inimigos';
+    }
+}
+
+module.exports = Iniciador;
