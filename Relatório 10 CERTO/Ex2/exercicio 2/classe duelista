@@ -1,0 +1,9 @@
+const AgenteProtocolo = require('./AgenteProtocolo');
+
+class Duelista extends AgenteProtocolo {
+    usarHabilidade() {
+        return 'avança dando um dash';
+    }
+}
+
+module.exports = Duelista;
