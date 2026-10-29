@@ -1,0 +1,7 @@
+class Pistola {
+    constructor(modelo) {
+        this.modelo = modelo;
+    }
+}
+
+module.exports = Pistola;
