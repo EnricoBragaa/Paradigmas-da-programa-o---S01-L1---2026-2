@@ -1,0 +1,14 @@
+const Pokemon = require('./Pokemon');
+
+class Bulbasaur extends Pokemon {
+    constructor(apelido, vidaInicial) {
+        super(apelido, 'Planta', vidaInicial);
+    }
+
+    atacar(alvo) {
+        console.log(`${this.apelido} usou Chicote de Vinha em ${alvo.apelido}!`);
+        alvo.sofrerDano(15);
+    }
+}
+
+module.exports = Bulbasaur;
