@@ -1,0 +1,19 @@
+const AgenteProtocolo = require('./AgenteProtocolo');
+const Controlador = require('./Controlador');
+const Iniciador = require('./Iniciador');
+const Duelista = require('./Duelista');
+const Esquadrao = require('./Esquadrao');
+
+const brimstone = new Controlador('Brimstone', 'Classic');
+const omen = new Controlador('Omen', 'Ghost');
+const sova = new Iniciador('Sova', 'Sheriff');
+const jett = new Duelista('Jett', 'Frenzy');
+
+const esquadrao = new Esquadrao('Alpha', [brimstone, omen, sova, jett]);
+esquadrao.iniciarPartida();
+
+console.log('\nControladores:');
+esquadrao.listarControladores().forEach(c => console.log(`- ${c.codinome}`));
+
+const agenteGenerico = new AgenteProtocolo('Desconhecido', 'Shorty');
+// agenteGenerico.entrarEmCombate();
