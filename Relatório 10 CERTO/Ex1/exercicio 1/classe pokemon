@@ -1,0 +1,27 @@
+class Pokemon {
+    constructor(apelido, tipo, vidaInicial) {
+        this.apelido = apelido;
+        this.tipo = tipo;
+        // o _ no começo é so um aviso de que nao é pra mexer de fora
+        this._vida = vidaInicial;
+    }
+
+    get vida() {
+        return this._vida;
+    }
+
+    sofrerDano(pontos) {
+        this._vida -= pontos;
+        if (this._vida < 0) {
+            this._vida = 0;
+        }
+        console.log(`${this.apelido} sofreu dano e ficou com ${this._vida} de vida`);
+    }
+
+    atacar(alvo) {
+        console.log(`${this.apelido} deu um ataque em ${alvo.apelido}!`);
+        alvo.sofrerDano(10);
+    }
+}
+
+module.exports = Pokemon;
