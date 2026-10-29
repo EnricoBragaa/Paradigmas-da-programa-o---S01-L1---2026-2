@@ -1,0 +1,9 @@
+const AgenteProtocolo = require('./AgenteProtocolo');
+
+class Controlador extends AgenteProtocolo {
+    usarHabilidade() {
+        return 'solta uma cortina de fumaça';
+    }
+}
+
+module.exports = Controlador;
