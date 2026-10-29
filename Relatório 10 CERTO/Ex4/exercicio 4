@@ -1,0 +1,75 @@
+// ---------- UsuarioDeNen ----------
+class UsuarioDeNen {
+    constructor(nome) {
+        this.nome = nome;
+    }
+
+    atacar(alvo) {
+        console.log(`${this.nome} lançou aura em ${alvo.nome}!`);
+    }
+}
+
+// ---------- Intensificador ----------
+class Intensificador extends UsuarioDeNen {
+    atacar(alvo) {
+        console.log(`${this.nome} deu um soco reforçado de aura em ${alvo.nome}!`);
+    }
+}
+
+// ---------- Transmutador ----------
+class Transmutador extends UsuarioDeNen {
+    atacar(alvo) {
+        console.log(`${this.nome} transformou a aura em eletricidade e acertou ${alvo.nome}!`);
+    }
+}
+
+// ---------- Materializador ----------
+class Materializador extends UsuarioDeNen {
+    atacar(alvo) {
+        console.log(`${this.nome} materializou uma lâmina de aura e atacou ${alvo.nome}!`);
+    }
+}
+
+// ---------- Aranha ----------
+class Aranha {
+    constructor(nome, numero) {
+        this.nome = nome;
+        this.numero = numero;
+    }
+}
+
+// ---------- TrupeFantasma ----------
+class TrupeFantasma {
+    // AGREGAÇÃO: as aranhas ja chegam prontas
+    constructor(cidade, aranhasIniciais = []) {
+        this.cidade = cidade;
+        this._aranhas = aranhasIniciais;
+    }
+
+    revelarAranhas() {
+        console.log(`Aranhas avistadas em ${this.cidade}:`);
+        this._aranhas.forEach(a => console.log(`Nº ${a.numero} - ${a.nome}`));
+    }
+
+    buscarAranha(numero) {
+        return this._aranhas.find(a => a.numero === numero);
+    }
+}
+
+// ---------- MAIN ----------
+const feitan = new Aranha('Feitan', 11);
+const phinks = new Aranha('Phinks', 5);
+
+const trupe = new TrupeFantasma('Yorknew', [feitan, phinks]);
+trupe.revelarAranhas();
+
+const alvo = trupe.buscarAranha(11);
+
+const hunters = [
+    new Intensificador('Gon'),
+    new Transmutador('Killua'),
+    new Materializador('Kurapika')
+];
+
+console.log('');
+hunters.forEach(h => h.atacar(alvo));
