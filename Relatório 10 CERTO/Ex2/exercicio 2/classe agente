@@ -1,0 +1,19 @@
+const Pistola = require('./Pistola');
+
+class AgenteProtocolo {
+    constructor(codinome, modeloDaPistola) {
+        this.codinome = codinome;
+        // COMPOSIÇÃO: a pistola é criada aqui dentro
+        this._pistola = new Pistola(modeloDaPistola);
+    }
+
+    usarHabilidade() {
+        throw new Error(`O agente ${this.codinome} deve implementar o método 'usarHabilidade()'`);
+    }
+
+    entrarEmCombate() {
+        console.log(`${this.codinome} entrou com a ${this._pistola.modelo}: ${this.usarHabilidade()}`);
+    }
+}
+
+module.exports = AgenteProtocolo;
