@@ -1,0 +1,8 @@
+Joguei no claude todas as classes e pedi pra ele juntar as classes em um código só para facilitar o commit (devia ter feito isso nos outros códigos)
+
+Prompt:
+coloque em um código só e divida por comentários cada uma das classes
+
+Resposta:
+Juntei o exercício 4 em um arquivo só, exercicio4.js, com um comentário separando cada classe (UsuarioDeNen, Intensificador, Transmutador, Materializador, Aranha, TrupeFantasma e o MAIN). Tirei os require e module.exports, já que está tudo no mesmo arquivo. O código das classes ficou igual ao que você mandou.
+Mandou também o código
