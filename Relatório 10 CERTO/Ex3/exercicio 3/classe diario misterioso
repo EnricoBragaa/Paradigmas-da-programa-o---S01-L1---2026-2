@@ -1,0 +1,21 @@
+const FichaDeCriatura = require('./FichaDeCriatura');
+
+class DiarioMisterioso {
+    constructor(numero) {
+        this.numero = numero;
+        this._fichas = [];
+    }
+
+    anotar(criatura, nivelDePerigo) {
+        // COMPOSIÇÃO: a ficha é criada aqui dentro
+        const ficha = new FichaDeCriatura(criatura, nivelDePerigo);
+        this._fichas.push(ficha);
+    }
+
+    exibirFichas() {
+        console.log(`\nDiário ${this.numero}:`);
+        this._fichas.forEach(f => console.log(f.descrever()));
+    }
+}
+
+module.exports = DiarioMisterioso;
