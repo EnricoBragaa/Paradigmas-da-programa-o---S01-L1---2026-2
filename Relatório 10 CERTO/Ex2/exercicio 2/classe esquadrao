@@ -1,0 +1,20 @@
+const Controlador = require('./Controlador');
+
+class Esquadrao {
+    // AGREGAÇÃO: os agentes ja chegam prontos
+    constructor(nome, agentes) {
+        this.nome = nome;
+        this._agentes = agentes;
+    }
+
+    iniciarPartida() {
+        console.log(`\n--- Esquadrão ${this.nome} começou a partida ---`);
+        this._agentes.forEach(a => a.entrarEmCombate());
+    }
+
+    listarControladores() {
+        return this._agentes.filter(a => a instanceof Controlador);
+    }
+}
+
+module.exports = Esquadrao;
