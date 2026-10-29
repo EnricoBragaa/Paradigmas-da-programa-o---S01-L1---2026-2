@@ -1,0 +1,18 @@
+class CabanaDoMisterio {
+    constructor(dono) {
+        this.dono = dono;
+        this._funcionarios = [];
+    }
+
+    // AGREGAÇÃO: o funcionario ja chega pronto
+    contratar(funcionario) {
+        this._funcionarios.push(funcionario);
+    }
+
+    abrirAsPortas() {
+        console.log(`\nCabana do Mistério do ${this.dono} aberta!`);
+        this._funcionarios.forEach(f => console.log(`${f.nome} - ${f.cargo}`));
+    }
+}
+
+module.exports = CabanaDoMisterio;
