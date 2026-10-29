@@ -1,0 +1,14 @@
+const Squirtle = require('./Squirtle');
+const Bulbasaur = require('./Bulbasaur');
+
+const squirtle = new Squirtle('Squirt', 40);
+const bulbasaur = new Bulbasaur('Bulba', 30);
+
+bulbasaur.atacar(squirtle);
+squirtle.atacar(bulbasaur);
+squirtle.atacar(bulbasaur);
+
+console.log(`Vida do ${squirtle.apelido}: ${squirtle.vida}`);
+console.log(`Vida do ${bulbasaur.apelido}: ${bulbasaur.vida}`);
+
+// console.log(squirtle._vida);
