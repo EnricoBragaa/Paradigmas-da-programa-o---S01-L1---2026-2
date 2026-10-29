@@ -1,0 +1,22 @@
+const DiarioMisterioso = require('./DiarioMisterioso');
+const Funcionario = require('./Funcionario');
+const CabanaDoMisterio = require('./CabanaDoMisterio');
+
+const diario = new DiarioMisterioso(3);
+diario.anotar('Gnomos', 'médio');
+diario.anotar('Gobblewonker', 'alto');
+diario.anotar('Multi-Urso', 'alto');
+diario.exibirFichas();
+
+const soos = new Funcionario('Soos', 'Faz-tudo');
+const wendy = new Funcionario('Wendy', 'Caixa');
+
+const cabana = new CabanaDoMisterio('Stan');
+cabana.contratar(soos);
+cabana.contratar(wendy);
+cabana.abrirAsPortas();
+
+// COMPOSIÇÃO: a FichaDeCriatura é criada dentro do anotar() do diário, entao
+// so existe dentro dele. se o diário sumir, as fichas somem junto.
+// AGREGAÇÃO: o Soos e a Wendy foram criados fora da Cabana e so foram passados
+// pro contratar(). se a Cabana sumir, eles continuam existindo.
