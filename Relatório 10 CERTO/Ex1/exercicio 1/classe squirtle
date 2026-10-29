@@ -1,0 +1,14 @@
+const Pokemon = require('./Pokemon');
+
+class Squirtle extends Pokemon {
+    constructor(apelido, vidaInicial) {
+        super(apelido, 'Água', vidaInicial);
+    }
+
+    atacar(alvo) {
+        console.log(`${this.apelido} usou Jato d'Água em ${alvo.apelido}!`);
+        alvo.sofrerDano(20);
+    }
+}
+
+module.exports = Squirtle;
