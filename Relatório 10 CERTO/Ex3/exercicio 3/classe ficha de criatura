@@ -1,0 +1,12 @@
+class FichaDeCriatura {
+    constructor(criatura, nivelDePerigo) {
+        this.criatura = criatura;
+        this.nivelDePerigo = nivelDePerigo;
+    }
+
+    descrever() {
+        return `${this.criatura} - nível de perigo: ${this.nivelDePerigo}`;
+    }
+}
+
+module.exports = FichaDeCriatura;
