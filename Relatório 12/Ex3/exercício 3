@@ -1,0 +1,47 @@
+data Esboco = Esboco
+  { titulo :: String
+  , tecnica :: String
+  , horas :: Int
+  }
+
+esbocoMaisRecente :: [Esboco] -> String
+esbocoMaisRecente [] = "O caderno esta vazio."
+esbocoMaisRecente (e:_) =
+  titulo e ++ " - tecnica: " ++ tecnica e
+
+contarEsbocos :: [Esboco] -> Int
+contarEsbocos [] = 0
+contarEsbocos (_:resto) = 1 + contarEsbocos resto
+
+horasDesenhando :: [Esboco] -> Int
+horasDesenhando [] = 0
+horasDesenhando (e:resto) =
+  horas e + horasDesenhando resto
+
+main :: IO ()
+main = do
+  let caderno =
+        [ Esboco "Castelo abandonado" "Nanquim" 3
+        , Esboco "Criatura da floresta" "Carvao" 2
+        , Esboco "Paisagem sombria" "Grafite" 4
+        ]
+
+  putStrLn "--- Caderno de esbocos ---"
+  putStrLn (esbocoMaisRecente caderno)
+  putStrLn ("Quantidade de esbocos: " ++ show (contarEsbocos caderno))
+  putStrLn ("Horas desenhando: " ++ show (horasDesenhando caderno))
+
+  putStrLn "--- Caderno vazio ---"
+  putStrLn (esbocoMaisRecente [])
+
+  let cadernoNovo = Esboco "Dragao antigo" "Nanquim" 5 : caderno
+
+  putStrLn "--- Comparando os cadernos ---"
+  putStrLn ("Caderno anterior: " ++ esbocoMaisRecente caderno)
+  putStrLn ("Quantidade anterior: " ++ show (contarEsbocos caderno))
+
+  putStrLn ("Caderno novo: " ++ esbocoMaisRecente cadernoNovo)
+  putStrLn ("Quantidade nova: " ++ show (contarEsbocos cadernoNovo))
+
+  -- print (titulo (head []))
+  -- A linha acima causaria erro porque head nao funciona com lista vazia.
