@@ -1,0 +1,35 @@
+data Cafe = Cafe String Double Int
+
+descrever :: Cafe -> String
+descrever (Cafe nome preco _) =
+  nome ++ " - R$ " ++ show preco
+
+forca :: Cafe -> String
+forca (Cafe _ _ intensidade)
+  | intensidade >= 8 = "Forte"
+  | intensidade >= 5 = "Equilibrado"
+  | otherwise = "Suave"
+
+precoDoPedido :: Bool -> Cafe -> Double
+precoDoPedido pediuLeite (Cafe _ preco _ ) =
+  if pediuLeite
+    then preco + 2.0
+    else preco
+
+main :: IO ()
+main = do
+  let cafeSuave = Cafe "Cafe com leite" 8.0 3
+  let cafeMedio = Cafe "Cafe tradicional" 10.0 6
+  let cafeForte = Cafe "Cafe especial" 14.0 9
+
+  putStrLn "--- Cafes do dia ---"
+  putStrLn (descrever cafeSuave ++ " - " ++ forca cafeSuave)
+  putStrLn (descrever cafeMedio ++ " - " ++ forca cafeMedio)
+  putStrLn (descrever cafeForte ++ " - " ++ forca cafeForte)
+
+  putStrLn "--- Preco do pedido ---"
+  putStrLn "Cafe especial com leite:"
+  print (precoDoPedido True cafeForte)
+
+  putStrLn "Cafe especial sem leite:"
+  print (precoDoPedido False cafeForte)
